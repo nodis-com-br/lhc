@@ -1,6 +1,6 @@
 {
   "name": "@nodis/lhc",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Frontend project to build all backend schemas into a NPM package",
   "repository": "https://github.com/nodis-com-br/lhc.git",
   "author": "Thiago Oliveira <thiago.oliveira@nodis.com.br>",
