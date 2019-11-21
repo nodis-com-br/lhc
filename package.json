@@ -1,6 +1,6 @@
 {
   "name": "@nodis/lhc",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Frontend project to build all backend schemas into a NPM package",
   "repository": "https://github.com/nodis-com-br/lhc.git",
   "author": "Thiago Oliveira <thiago.oliveira@nodis.com.br>",
@@ -14,16 +14,23 @@
     "dotenv": "8.2.0",
     "graphql": "14.5.8",
     "prettier": "1.19.1",
+    "rollup": "1.27.3",
+    "rollup-plugin-typescript2": "0.25.2",
     "ts-node": "8.5.2"
   },
   "dependencies": {
     "typescript": "3.7.2"
   },
   "scripts": {
-    "build": "ts-node index.ts",
-    "publish-package": "yarn publish --access restricted"
+    "fetch-schemas": "ts-node src/index.ts",
+    "publish-package": "yarn publish --access restricted",
+    "build": "rollup -c",
+    "watch": "rollup -cw"
   },
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "files": [
     "dist"
-  ]
+  ],
+  "types": "dist/index.d.ts"
 }
