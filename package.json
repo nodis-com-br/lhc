@@ -1,0 +1,29 @@
+{
+  "name": "@nodis/lhc",
+  "version": "0.1.1",
+  "description": "Frontend project to build all backend schemas into a NPM package",
+  "repository": "https://github.com/nodis-com-br/lhc.git",
+  "author": "Thiago Oliveira <thiago.oliveira@nodis.com.br>",
+  "devDependencies": {
+    "@graphql-codegen/core": "1.8.3",
+    "@graphql-codegen/typescript": "1.8.3",
+    "@nodis/math": "0.1.0",
+    "@types/dotenv": "8.2.0",
+    "@types/node": "12.12.11",
+    "axios": "0.19.0",
+    "dotenv": "8.2.0",
+    "graphql": "14.5.8",
+    "prettier": "1.19.1",
+    "ts-node": "8.5.2"
+  },
+  "dependencies": {
+    "typescript": "3.7.2"
+  },
+  "scripts": {
+    "build": "ts-node index.ts",
+    "publish-package": "yarn publish --access restricted"
+  },
+  "files": [
+    "dist"
+  ]
+}
