@@ -2,10 +2,11 @@
   "compilerOptions": {
     "declaration": true,
     "declarationDir": "./dist",
-    "module": "es6",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "outDir": "./dist",
-    "target": "es5"
+    "target": "es5",
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
   "include": ["schemas/**/*"],
   "exclude": ["node_modules"]
