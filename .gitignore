@@ -4,3 +4,4 @@ dist
 schemas/**
 !schemas/.gitkeep
 coverage
+.scannerwork
