@@ -14,16 +14,7 @@ const generatePackage = async schemaName => {
         typescript: require('typescript'),
       }),
     ],
-    // external: [
-    //   ...Object.keys(pkg.dependencies || {}),
-    //   ...Object.keys(pkg.peerDependencies || {}),
-    // ],
   };
-  // const outputEsOptions: OutputOptions = {
-  //   dir: path.join(__dirname, '../dist/', schemaName),
-  //   file: 'index',
-  //   format: 'es',
-  // };
   const outputCjsOptions: OutputOptions = {
     file: path.join(__dirname, '../dist/', `${schemaName}/index.js`),
     format: 'cjs',

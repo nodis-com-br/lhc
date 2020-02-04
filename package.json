@@ -9,10 +9,24 @@
   ],
   "devDependencies": {
     "@nodis/math": "1.1.0",
+    "@types/jest": "25.1.1",
+    "@typescript-eslint/eslint-plugin": "2.19.0",
+    "@typescript-eslint/parser": "2.19.0",
+    "eslint": "6.8.0",
+    "eslint-config-prettier": "6.10.0",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-prettier": "3.1.2",
     "git-cz": "3.3.0",
     "husky": "3.1.0",
+    "is-ci-cli": "2.0.0",
+    "jest": "25.1.0",
+    "jest-runner-eslint": "0.7.6",
+    "jest-sonar-reporter": "2.0.0",
+    "jest-watch-select-projects": "2.0.0",
+    "jest-watch-typeahead": "0.4.2",
     "lint-staged": "9.5.0",
     "prettier": "1.19.1",
+    "ts-jest": "25.2.0",
     "yarn-run-all": "3.1.1"
   },
   "dependencies": {
@@ -37,11 +51,19 @@
     "clean:schemas": "find ./schemas/* -name \"*.ts\" -exec rm {} \\;",
     "clean:dist": "rm -rf ./dist/*",
     "clean:yarn": "rm -rf node_modules yarn.lock && yarn",
-    "lint": "run-s code-style:**",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:coverage": "jest --coverage --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+    "eslint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "lint": "run-p code-style:**",
     "code-style:typescript": "tsc --noEmit",
-    "code-style:prettier": "prettier --check './**/*.{js,ts,tsx}'",
+    "code-style:eslint": "jest --config test/jest.lint.js --passWithNoTests",
+    "code-style:prettier": "yarn prettier -- --check",
     "format": "run-s format:**",
-    "format:prettier": "prettier --write './**/*.{js,ts,tsx}'",
+    "format:eslint": "yarn eslint --quiet --fix",
+    "format:prettier": "yarn prettier -- --write",
     "cm": "git add . && git-cz"
   },
   "husky": {
@@ -50,9 +72,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,ts,tsx}": [
-      "yarn format:prettier",
-      "git add"
+    "*.{js,json,ts,md}": [
+      "yarn format:prettier"
     ]
   }
 }
