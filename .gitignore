@@ -3,3 +3,5 @@ yarn-error.log
 dist
 schemas/**
 !schemas/.gitkeep
+coverage
+.scannerwork
