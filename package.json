@@ -75,5 +75,9 @@
     "*.{js,json,ts,md}": [
       "yarn format:prettier"
     ]
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "sonar-report.xml"
   }
 }
