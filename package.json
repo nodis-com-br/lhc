@@ -7,8 +7,31 @@
   "contributors": [
     "Yuri Azevedo <yuri.azevedo@nodis.com.br>"
   ],
+  "scripts": {
+    "fetch-schemas": "ts-node src/index.ts",
+    "publish-package": "yarn publish --access restricted",
+    "build": "ts-node src/buildPackages.ts",
+    "clean": "run-s clean:**",
+    "clean:schemas": "find ./schemas/* -name \"*.ts\" -exec rm {} \\;",
+    "clean:dist": "rm -rf ./dist/*",
+    "clean:yarn": "rm -rf node_modules yarn.lock && yarn",
+    "test": "is-ci \"test:coverage\" \"test:watch\"",
+    "test:coverage": "jest --coverage --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
+    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
+    "eslint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
+    "lint": "run-p code-style:**",
+    "code-style:typescript": "tsc --noEmit",
+    "code-style:eslint": "jest --config test/jest.lint.js --passWithNoTests",
+    "code-style:prettier": "yarn prettier -- --check",
+    "format": "run-s format:**",
+    "format:eslint": "yarn eslint --quiet --fix",
+    "format:prettier": "yarn prettier -- --write",
+    "cm": "git add . && git-cz"
+  },
   "devDependencies": {
-    "@nodis/math": "1.1.0",
+    "@nodis/math": "1.2.1",
     "@types/jest": "25.1.1",
     "@typescript-eslint/eslint-plugin": "2.19.0",
     "@typescript-eslint/parser": "2.19.0",
@@ -42,29 +65,6 @@
     "rollup-plugin-typescript2": "0.25.3",
     "ts-node": "8.5.4",
     "typescript": "3.7.2"
-  },
-  "scripts": {
-    "fetch-schemas": "ts-node src/index.ts",
-    "publish-package": "yarn publish --access restricted",
-    "build": "ts-node src/buildPackages.ts",
-    "clean": "run-s clean:**",
-    "clean:schemas": "find ./schemas/* -name \"*.ts\" -exec rm {} \\;",
-    "clean:dist": "rm -rf ./dist/*",
-    "clean:yarn": "rm -rf node_modules yarn.lock && yarn",
-    "test": "is-ci \"test:coverage\" \"test:watch\"",
-    "test:coverage": "jest --coverage --passWithNoTests",
-    "test:watch": "jest --watch",
-    "test:debug": "node --inspect-brk ./node_modules/jest/bin/jest.js --runInBand --watch",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|ts|tsx)\"",
-    "eslint": "eslint --ignore-path .gitignore --ext .js,.ts,.tsx .",
-    "lint": "run-p code-style:**",
-    "code-style:typescript": "tsc --noEmit",
-    "code-style:eslint": "jest --config test/jest.lint.js --passWithNoTests",
-    "code-style:prettier": "yarn prettier -- --check",
-    "format": "run-s format:**",
-    "format:eslint": "yarn eslint --quiet --fix",
-    "format:prettier": "yarn prettier -- --write",
-    "cm": "git add . && git-cz"
   },
   "husky": {
     "hooks": {
