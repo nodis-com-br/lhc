@@ -6,7 +6,7 @@ import { Schema } from './models/Schema';
 
 const fetchSchema = async (context: string) => {
   const { data } = await axios.get<string>(
-    `https://api.qa.nodis.com.br/${context}/v1/graphql-schema`,
+    `https://api.dev.nodis.com.br/${context}/v1/graphql-schema`,
     {
       headers: {
         'Content-Type': 'text/plain',
