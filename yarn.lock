@@ -783,10 +783,10 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
-"@nodis/math@1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@nodis/math/-/math-1.1.0.tgz#437564d921f364fe11c82628ecf0548b179b7821"
-  integrity sha512-zPHGtP2LCXtFi70hzRsb/VXkfLqq67GyOJEVNGNGHiXmwPySjpoMvcWEvCStDn4OR6BSvcEzWLlOmWM838/3RA==
+"@nodis/math@^1.3.0":
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/@nodis/math/-/math-1.3.0.tgz#9649ba855f6023d859b56c6fe1e1938ddefcf39d"
+  integrity sha512-3YVR/Av21HNPSJBnqhBUzwIO/niJeiSDAhWqasat1bSzzxSAFYi8aXau9RakengHorpEZRyqqtYZ8WnlmjVsIQ==
 
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
