@@ -6,7 +6,7 @@ import { paramCase } from 'change-case';
 
 import pkg from '../package.json';
 
-const generatePackage = async schemaName => {
+const generatePackage = async (schemaName: string) => {
   const inputOptions: InputOptions = {
     input: path.join(__dirname, '../', 'schemas/', `${schemaName}.ts`),
     plugins: [
@@ -25,14 +25,14 @@ const generatePackage = async schemaName => {
     esModule: true,
   };
 
-  // create a bundle
+  // Create a bundle
   const bundle = await rollup(inputOptions);
 
-  // generate code
+  // Generate code
   await bundle.generate(outputEsOptions);
   await bundle.generate(outputCjsOptions);
 
-  // write the bundle to disk
+  // Write the bundle to disk
   await bundle.write(outputEsOptions);
   await bundle.write(outputCjsOptions);
 

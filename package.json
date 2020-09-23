@@ -44,9 +44,10 @@
     "typescript": "3.7.2"
   },
   "scripts": {
+    "gen": "run-s fetch-schemas build",
     "fetch-schemas": "ts-node src/index.ts",
-    "publish-package": "yarn publish --access restricted",
     "build": "ts-node src/buildPackages.ts",
+    "publish-packages": "ts-node src/publishPackages.ts",
     "clean": "run-s clean:**",
     "clean:schemas": "find ./schemas/* -name \"*.ts\" -exec rm {} \\;",
     "clean:dist": "rm -rf ./dist/*",
