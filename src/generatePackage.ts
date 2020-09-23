@@ -45,6 +45,7 @@ const generatePackage = async (schemaName: string) => {
     main: 'index.js',
     module: 'index.es.js',
     types: `${schemaName}.d.ts`,
+    license: 'UNLICENSED',
   };
 
   fs.writeFile(
