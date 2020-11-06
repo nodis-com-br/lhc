@@ -1,5 +1,5 @@
 {
-  "name": "@nodis/lhc",
+  "name": "@nodis-com-br/lhc",
   "private": true,
   "version": "2.2.5",
   "description": "Frontend project to build all backend schemas into a NPM package",
@@ -67,6 +67,9 @@
     "format:eslint": "yarn eslint --quiet --fix",
     "format:prettier": "yarn prettier -- --write",
     "cm": "git add . && git-cz"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "husky": {
     "hooks": {

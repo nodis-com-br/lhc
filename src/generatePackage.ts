@@ -46,6 +46,7 @@ const generatePackage = async (schemaName: string) => {
     module: 'index.es.js',
     types: `${schemaName}.d.ts`,
     license: 'UNLICENSED',
+    publishConfig: pkg.publishConfig,
   };
 
   fs.writeFile(
