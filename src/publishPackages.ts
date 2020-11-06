@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { exec } from 'child_process';
 import { paramCase } from 'change-case';
 
@@ -16,7 +17,7 @@ destinationFileNames.forEach(destination => {
         console.log(`stderr: ${stderr}`);
         return;
       }
-      console.log(`@nodis/lhc-${paramCase(destination)} published!`);
+      console.log(`@nodis-com-br/lhc-${paramCase(destination)} published!`);
     },
   );
 });

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as fs from 'fs';
 import * as typescriptPlugin from '@graphql-codegen/typescript';
 import { codegen } from '@graphql-codegen/core';
