@@ -1,0 +1,18 @@
+hooks:
+  afterOneFileWrite:
+    - prettier --write
+
+overwrite: true
+documents: 'src/graphql/**/*.ts'
+generates:
+  ./src/graphql/generated-types.ts:
+    schema:
+      - https://api.dev.nodis.com.br/gateway/v1/graphql
+      - https://api.dev.nodis.com.br/register_gateway/v1/graphql
+      - https://api.dev.nodis.com.br/stone_logistics_app/v1/graphql
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+      withHooks: true
